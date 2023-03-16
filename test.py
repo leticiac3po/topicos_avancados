@@ -24,7 +24,7 @@ def test(file_path):
     derain_model.eval()
 
     deblur_model = MPRNet()
-    weights = os.path.join(pathname, "Deblurring", "pretrained_models", "model_best.pth")
+    weights = os.path.join(pathname, "Deblurring", "pretrained_models", "model_deblur.pth")
     utils.load_checkpoint(deblur_model,weights)
     deblur_model.cuda()
     deblur_model = nn.DataParallel(deblur_model)
